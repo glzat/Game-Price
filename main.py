@@ -3,11 +3,13 @@ import re
 import time
 from bs4 import BeautifulSoup
 
+num = int(input("请输入要爬取的页数："))
+
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
 }
 with open("game_price.txt", "w", encoding='utf-8') as f:
-    for page_number in range(1,50):
+    for page_number in range(1, num):
         time.sleep(1)# 防止爬虫被拦截
         url = f"https://store.steampowered.com/search/?specials=1&page={page_number}"
         try:
